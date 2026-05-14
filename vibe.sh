@@ -5,8 +5,8 @@ TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
 echo "Launching llama-server..."
 
 ~/Development/ai/tools/llama-cpp/llama-server \
-  -m ~/Development/ai/models/llm/Qwen3-Coder-30B-A3B-Instruct-UD-IQ3_XXS.gguf \
-  --alias qwen3-coder \
+  -m ~/Development/ai/models/llm/Qwen3.6-27B-IQ4_XS.gguf \
+  --alias qwen3.6 \
   --ctx-size 131072 \
   --n-gpu-layers 99 \
   --flash-attn on \
@@ -31,7 +31,7 @@ until curl -sf http://127.0.0.1:11434/health >/dev/null; do
 done
 echo "Server ready: launching opencode..."
 
-OPENCODE_ENABLE_EXA=1 opencode --model llama-server/qwen3-coder
+OPENCODE_ENABLE_EXA=1 opencode --model llama.cpp/qwen3.6
 
 killall llama-server
 

@@ -33,11 +33,11 @@ Scripts I use for local AI usage.
 
 I am using a [gmml-org/llama.cpp release](https://github.com/ggml-org/llama.cpp/releases/): ubuntu-vulkan-x86, in my case.
 
-I unpacked it to ~/Development/ai/tools/llama-cpp/
+I unpacked it to `~/Development/ai/tools/llama-cpp/`
 
-For vibe, I am using [Qwen3 Coder 30B from unsloth's GGUF](https://huggingface.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF/tree/main): `Qwen3-Coder-30B-A3B-Instruct-UD-IQ3_XXS.gguf` in my case.
+For both chat and vibe, I am using [Qwen3.6 27B from unsloth's GGUF](https://huggingface.co/unsloth/Qwen3.6-27B-GGUF/tree/main): `Qwen3.6-27B-IQ4_XS.gguf` in my case (plus `mmproj-F16.gguf` for vision).
 
-For chat, I am using [Qwen3.6 27B from unsloth's GGUF](https://huggingface.co/unsloth/Qwen3.6-27B-GGUF/tree/main): `Qwen3.6-27B-IQ4_XS.gguf` in my case (plus `mmproj-F16.gguf` for vision).
+I unpacked those to `~/Development/ai/models/llm/`
 
 ## opencode
 
@@ -56,8 +56,8 @@ My config - located at `~/.config/opencode/opencode.json` - has this:
         "baseURL": "http://127.0.0.1:11434/v1"
       },
       "models": {
-        "qwen3-coder": {
-          "name": "Qwen3-Coder",
+        "qwen3.6": {
+          "name": "Qwen3.6-27B",
           "limit": {
             "context": 128000,
             "output": 65536
@@ -67,8 +67,6 @@ My config - located at `~/.config/opencode/opencode.json` - has this:
     }
   },
   "permission": {
-    "edit": "ask",
-    "bash": "ask",
     "webfetch": "allow",
     "websearch": "allow"
   }
